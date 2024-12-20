@@ -37,10 +37,10 @@ def detect():
         bacilli_count = 0
         for result in results:
             for detection in result.boxes.data:
-                if int(detection[5]) == 0:  # Assuming bacillus class is 0 
+                if int(detection[5]) == 0:  # Assuming bacillus class is 0
                     bacilli_count += 1
                     x1, y1, x2, y2 = map(int, detection[:4])
-                    cv2.rectangle(img, (x1, y1), (x2, y2), (0, 0, 255), 2)  # Red box
+                    cv2.rectangle(img, (x1, y1), (x2, y2), (0, 0, 255), 2)
 
         # Encode the image back to base64
         _, buffer = cv2.imencode('.jpg', img)
