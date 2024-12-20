@@ -6,7 +6,7 @@ import numpy as np
 import cv2
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, resources={r"/*": {"origins": "https://agreeable-wave-0c91d1a03.4.azurestaticapps.net"}})
 
 model_weights = 'last.pt'
 model = YOLO(model_weights)
